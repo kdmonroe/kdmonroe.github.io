@@ -1,0 +1,12 @@
+.rounded {
+    border-radius: 50%;
+    width: 150px; // or your desired width
+    height: 150px; // or your desired height, should be equal to width
+    object-fit: cover; // if it's an image, this will ensure it covers the area without stretching
+  }
+  
+$body-background-color: #f5f5f5;
+$text-color: #333333;
+$secondary-text-color: #666666;
+$accent-color: #007acc;
+$header-font-color: #ff69b4; // or use a gradient here if desired

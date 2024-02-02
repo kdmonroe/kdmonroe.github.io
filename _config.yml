@@ -13,20 +13,20 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Keon Monroe 🌏
-email: keon.monroe@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-Hi, I'm Keon! Based in Philadelphia with a passion for geospatial and mapping data that matters. Coding is my superpower, with Python, JavaScript, and R as my sidekicks. When I power down, I'm an eco-warrior🌲, yoga enthusiast 🧘, and proud dog parent 🐶. 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://kdmonroe.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-avatar: /assets/avy.jpg
 
-# Social Links 
-github_username:  kdmonroe
+# Mastodon instances
 mastodon:
-  username: kmonroe
+- username: kmonroe
   instance: mapstodon.space
 
+title: KM 🌏
+email: keon.monroe@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Hi, I'm Keon! Based in Philadelphia with a passion for geospatial and mapping data that matters. Coding is my superpower, with Python, JavaScript, and R as my sidekicks. When I power down, I'm an eco-warrior🌲, yoga enthusiast 🧘, and proud dog parent 🐶. 
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://kdmonroe.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  kdmonroe
+avatar: /assets/avy.jpg
 
 # Build settings
 markdown: kramdown
