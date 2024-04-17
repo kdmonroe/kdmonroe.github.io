@@ -1,12 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+// Define theme colors
+$light-theme-background-color: #fff;
+$light-theme-text-color: #333;
+$light-theme-brand-color: #007bff;
+$light-theme-secondary-text-color: #666;
+$light-theme-accent-color: #f0b500;
+$light-theme-header-font-color: #007bff;
+
+$dark-theme-background-color: #222;
+$dark-theme-text-color: #ddd;
+$dark-theme-brand-color: #33ccff;
+$dark-theme-secondary-text-color: #999;
+$dark-theme-accent-color: #ffb347;
+$dark-theme-header-font-color: #33ccff;
+
+.category-labels {
+  margin: 0.5em 0;
+}
+// Define your category colors
+$categories: (
+  "project": #273c75,
+  "javascript": #f39c12,
+  "python": #16a085,
+  "dsa": #8e44ad,
+  "backend": #c0392b,
+  "database": #34495e,
+  "r": #2c3e50,
+  "data-viz": #27ae60,
+  "foss": #d35400,
+  "web-dev": #e74c3c,
+  "frontend": #d35400,
+  "conference": #9b59b6,
+  "op-ed": #2980b9,
+  "academic": #8e44ad,
+  "imagery": #d35400,
+  "demo": #34495e,
+  "esri": #750a4f,
+);
+
+
+// Category label styling
+.category-label {
+  border-radius: 1em; // Makes the label rounded
+  text-transform: uppercase; // Makes the text all caps
+  font-family: Arial, sans-serif; // Sets the font to Arial
+  font-size: 0.6em; // Makes the text size smaller
+  padding: 0.5em 1em; // Adds some padding
+  color: white; // Makes the text color white
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2); 
+  font-weight: bold;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row; // Aligns children in a row
+  justify-content: space-between; // Spaces out children to each end
+  align-items: center; // Centers children vertically
+  width: 100%; // Ensures the wrapper takes full width
+}
+
+// Theme switcher button styling
+#theme-toggle {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  z-index: 1000;
+  transition: color 0.3s ease, transform 0.3s ease; // Smooth transition effects
+
+  &:hover {
+    color: #ff6347; // Changes color on hover
+    transform: scale(1.1); // Scales up on hover
+  }
+}
+
+.post-item {
+  border-bottom: 0px solid #ccc; // added border
+  padding-bottom: 1em; // added padding
+  margin-bottom: 1em; // added margin
+}
+
+// Global styles applied to both themes
+body {
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease; // Smooth transition for theme change
+}
+body.light-theme {
+  background-color: $light-theme-background-color; 
+  color: $light-theme-text-color;
+
+  .site-header{
+    background-color: $light-theme-background-color;
+    color:$light-theme-text-color
+  }
+  .site-title,
+  .site-title:visited {
+    color: $light-theme-text-color;
+  }
+  .post-title {
+    color: $light-theme-text-color;
+  }
+
+  .page-link {
+    color: $light-theme-text-color;
+    order: 2;
+  }
+}
+
+body.dark-theme {
+  background-color: $dark-theme-background-color;
+  color: $dark-theme-text-color;
+  
+  .site-header {
+    background-color: $dark-theme-background-color;
+    color: $dark-theme-text-color;
+  }
+
+  .site-title,
+  .site-title:visited {
+    color: $dark-theme-text-color;
+  }
+  .post-title {
+    color: $dark-theme-text-color;
+  }
+
+  .page-link {
+    color: $dark-theme-text-color;
+    order: 2; 
+  }
+}
+
+@each $category, $color in $categories {
+  .category-label.#{'category-' + $category} {
+    background-color: lighten($color, 10%);
+    color: #fff;
+  }
+}
+
 .rounded {
     border-radius: 50%;
     width: 150px; // or your desired width
     height: 150px; // or your desired height, should be equal to width
     object-fit: cover; // if it's an image, this will ensure it covers the area without stretching
   }
+
+.theme-switcher {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  border: none;
+  color: gray; 
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  z-index: 1000;
+  margin-left: auto;
+  transition: color 0.3s ease, transform 0.3s ease; // added for smooth transition
+
+  &:hover {
+    color: #ff6347; // changes color on hover
+    transform: scale(1.1); // scales up on hover
+  }
+}
+// .theme-toggle {
+//   background: none;
+//   border: none;
+//   cursor: pointer;
+//   margin-left: auto; // This will push the button to the end of the navigation bar if using flexbox
+// }
+
+// Adjust these values as necessary to fit your layout and design
+.site-nav {
+  display: flex;
+  align-items: center; // This ensures vertical alignment is centered
+  justify-content: flex-end;
+
+  .trigger {
+    display: flex;
+    align-items: center;
+
+    .site-title, // Adjust this class as needed
+    .page-link {
+      margin-right: 1rem; 
+      align-items: center;
+    }
+  }
+
+  #nav-trigger {
+    display: none; // Hide the checkbox
+  }
+}
+
+// When the nav-trigger is checked (mobile menu open), you might want to change the display of .trigger
+@media (max-width: your-breakpoint-here) {
+  #nav-trigger:checked ~ .trigger {
+    display: block; // or 'flex' depending on your design
+  }
+}
+
+
+// Icon sizing can be adjusted here
+#theme-icon {
+  font-size: 1.5rem;
+}
+
+
+// Add a class for the site name heading
+.site-name {
+  font-size: 2em; // Adjust as needed
+  text-align: center;
+}
+
+
+.project {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem; // Add space between project entries
+
+  .rounded {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .project-info {
+    margin-left: 1rem;
+  }
+
+  // .github-link {
+  //   display: flex;
+  //   align-items: center;
+  //   margin-left: 0.5rem;
+  //   text-decoration: none;
+
+  //   .fab {
+  //     margin-right: 0.25rem;
+  //   }
+  // }
+  .github-link {
+    display: inline;
+    color: #333;
+    font-size: 1.5em; 
+    vertical-align: middle; // Aligns the icon vertically with the text
   
-$body-background-color: #f5f5f5;
-$text-color: #333333;
-$secondary-text-color: #666666;
-$accent-color: #007acc;
-$header-font-color: #ff69b4; // or use a gradient here if desired
+    &:hover {
+      color: darken(#333, 10%);
+    }
+  
+    .fab {
+      font-size: 1.0em; // Adjust the icon size as needed
+    }
+  }
+  
+}
+
+.site-header {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+}
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+
+.profile-container {
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap; 
+}
+
+.image-row {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 20px; 
+  margin-bottom: 20px; 
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 150px; 
+  height: 150px; 
+  object-fit: cover; 
+  display: inline-block; 
+}
+
+.rotating-images {
+  display: flex;
+  overflow: hidden;
+  height: 150px; 
+}
+
+.rotating-image {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  display: block;
+  object-fit: cover;
+  position: relative; 
+  animation: rotate 20s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+
+  &:before {
+    content: attr(data-message);
+    display: none;
+    position: absolute;
+    bottom: 100%; // Position the message above the image
+    left: 50%;
+    transform: translateX(-50%); // Center the message
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap; // Prevent the message from wrapping
+    margin-bottom: 5px; // Give some space above the image
+  }
+
+  &:hover:before {
+    display: block;
+  }
+}
+
+
+@keyframes rotate {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); /* Adjust the translateX value based on total width of images */ }
+}

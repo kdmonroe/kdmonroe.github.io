@@ -19,10 +19,10 @@ mastodon:
 - username: kmonroe
   instance: mapstodon.space
 
-title: KM 🌏
+title: Blog
 email: keon.monroe@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Hi, I'm Keon! Based in Philadelphia with a passion for geospatial and mapping data that matters. Coding is my superpower, with Python, JavaScript, and R as my sidekicks. When I power down, I'm an eco-warrior🌲, yoga enthusiast 🧘, and proud dog parent 🐶. 
+  Keon's Jekyll based portfolio website. Deployed on GitHub Pages.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kdmonroe.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  kdmonroe
@@ -34,9 +34,17 @@ theme: minima
 plugins:
   - jekyll-feed
 
+social:
+  linkedin: kdmonroe
+  mastodon: https://mapstodon.space/@kmonroe
+
 header_pages:
   - about.md
   - portfolio.md
+
+exclude:
+  - draft_posts/
+  - secret_post.md
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

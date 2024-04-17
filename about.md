@@ -4,16 +4,24 @@ title: About
 permalink: /about/
 ---
 
-![Your Name](/assets/avy.jpg){: .rounded} <!-- This uses a custom CSS class to make the image round -->
+<div class="image-row">
+    <img src="/assets/about/avy.jpg" alt="Profile picture - LinkedIn" class="profile-pic">
+    <img src="/assets/about/image1.jpg" alt="Profile picture - Mastodon" class="profile-pic">
+    <img src="/assets/about/image3.jpg" alt="Profile picture- GitHub" class="profile-pic">
+</div>
 
-# About Me
+**Welcome to my website! My name is Keon Monroe.**  I am a geospatial developer based in Philadelphia 
+Within this online portfolio I aim to share maps, demos, and other software projects. 
+I code primarily in Python, JavaScript and R. I'm always learning about tech! 
 
-I am a GIS Software Engineer with [X years of experience, specialized skills, notable projects, etc.]. I have a passion for [a brief introduction about your interests in GIS and software engineering].
+When I'm not programming, I am a climate advocate 🌏 , yogi 🧘, and dog 1 of 2 dads 🐶🏳️‍🌈
 
-For a detailed overview of my professional experience, please download my CV below.
-
-[Download CV](/assets/example_cv.pdf) <!-- Link to your CV file uploaded in the assets directory -->
 
 ## Contact
+- 📧 [Email](mailto:keon.monroe@gmail.com)
+- 👥 <a href="https://linkedin.com/in/kdmonroe" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+- 🐦 <a href="https://mapstodon.space/@kmonroe" target="_blank"><i class="fab fa-mastodon"></i> Mastodon</a>
 
-Feel free to reach out to me via email at [keon.monroe@gmail.com](mailto:keon.monroe@gmail.com).
+#### About the Website
+This website was built with [Jekyll](https://jekyllrb.com) 
+and deployed on [GitHub Pages](https://pages.github.com).

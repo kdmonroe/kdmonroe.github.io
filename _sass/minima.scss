@@ -1,7 +1,6 @@
 @charset "utf-8";
 @import "custom";
 
-// Define defaults for each variable.
 
 $base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $base-font-size: 16px !default;
@@ -11,14 +10,16 @@ $base-line-height: 1.5 !default;
 
 $spacing-unit: 30px !default;
 
-// Updated color variables for dark theme
-$text-color: #e0e0e0 !default; // light gray for text
-$background-color: #1a1a1a !default; // dark gray for background
-$brand-color: #ff69b4 !default; // bright pink for brand/accent color
+$background-color: light-theme-background-color ; 
+$text-color: $light-theme-text-color; 
+$brand-color: $light-theme-brand-color;
+$secondary-text-color: $light-theme-secondary-text-color;
+$accent-color: $light-theme-accent-color; 
+$header-font-color: $light-theme-header-font-color; 
 
 $grey-color: #828282 !default;
-$grey-color-light: lighten($grey-color, 40%) !default; // may need adjustment for dark theme
-$grey-color-dark: darken($grey-color, 25%) !default; // may need adjustment for dark theme
+$grey-color-light: lighten($grey-color, 40%) !default; 
+$grey-color-dark: darken($grey-color, 25%) !default; 
 
 $table-text-align: left !default;
 

@@ -1,22 +1,35 @@
 ---
 layout: page
-title: Portfolio
+title: Projects
 permalink: /portfolio/
 ---
-projects:
-  - name: "Project Name"
-    description: "Project Description"
-    image: "url-to-project-image"
-    link: "url-to-project-page-or-github"
-  - name: "Another Project"
-    description: "Another Description"
-    image: "url-to-another-project-image"
-    link: "url-to-another-project-page-or-github"
 
-{% for project in page.projects %}
+
+{% for post in site.categories['project'] %}
   <div class="project">
-    <h2>{{ project.name }}</h2>
-    <p>{{ project.description }}</p>
-    <!-- Add more project details here -->
+    <img src="{{ post.thumbnail }}" alt="{{ post.title }}" class="rounded">
+    <div class="project-info">
+      <!-- Make the title a link to the post -->
+      <h3>
+        <a href="{{ post.url | relative_url }}" class="project-title-link">{{ post.title }}</a>
+      </h3>
+      <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+      <div class="project-meta">
+        {% if post.categories.size > 0 %}
+          <!-- Use the category to create a specific class for each label -->
+          <div class="post-categories">
+            {% for category in post.categories %}
+              <span class="category-label category-{{ category | slugify }}">{{ category }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+        <!-- Check if there's a GitHub URL before displaying the link -->
+        {% if post.github_url %}
+          <a href="{{ post.github_url }}" class="github-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+          </a>
+        {% endif %}
+      </div>
+    </div>
   </div>
 {% endfor %}
