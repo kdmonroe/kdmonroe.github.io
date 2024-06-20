@@ -14,14 +14,14 @@ permalink: /about/
 Within this online portfolio I aim to share maps, demos, and other software projects. 
 I code primarily in Python, JavaScript and R. I'm always learning about tech! 
 
-When I'm not programming, I am a climate advocate 🌏 , yogi 🧘, and dog 1 of 2 dads 🐶🏳️‍🌈
+When I'm not programming, I am a climate advocate 🌏 , yogi 🧘, and 1 of 2 dog dads 🐶🏳️‍🌈
 
 
 ## Contact
 - 📧 [Email](mailto:keon.monroe@gmail.com)
-- 👥 <a href="https://linkedin.com/in/kdmonroe" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-- 🐦 <a href="https://mapstodon.space/@kmonroe" target="_blank"><i class="fab fa-mastodon"></i> Mastodon</a>
+- <a href="https://linkedin.com/in/kdmonroe" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+- <a href="https://mapstodon.space/@kmonroe" target="_blank"><i class="fab fa-mastodon"></i> Mastodon</a>
 
-#### About the Website
+### How I built this
 This website was built with [Jekyll](https://jekyllrb.com) 
 and deployed on [GitHub Pages](https://pages.github.com).
